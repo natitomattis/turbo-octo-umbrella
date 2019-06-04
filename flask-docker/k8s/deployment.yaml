@@ -1,0 +1,23 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: titanic-ml-deploy
+  labels:
+    app: titanic-ml
+    env: prod    
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: titanic-ml
+        env: prod
+    spec:
+      containers:
+      - image: natitomattis/flask-first
+        name: test-ml-titanic-api
+        ports:
+        - containerPort: 5000
+          protocol: TCP

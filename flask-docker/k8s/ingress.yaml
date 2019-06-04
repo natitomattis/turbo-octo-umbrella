@@ -1,0 +1,14 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: titanic-ingress
+spec:
+  rules:
+  - host: titanic.ml.nat
+    http:
+      paths:
+        - path: /predict
+          backend:
+            serviceName: titanic-ml-svc
+            servicePort: 5000
