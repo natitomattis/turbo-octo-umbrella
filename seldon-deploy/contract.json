@@ -1,0 +1,56 @@
+{
+    "features":[
+	{
+	    "name":"Pclass",
+		"ftype":"categorical",
+		"values": ["1","2","3"]
+	},
+	{
+	    "name":"Sex",
+		"ftype":"categorical",
+		"values": ["0","1"]
+	},
+	{
+	    "name":"Age",
+	    "ftype":"categorical",
+	    "values": ["0","1","2","3", "4", "5","6","7"]
+	},
+	{
+	    "name":"SibSp",
+	    "dtype":"INT",
+		"ftype":"continuous"
+	},
+	{
+	    "name":"Parch",
+	    "dtype":"INT",
+	    "ftype":"continuous"
+	},
+	{
+	    "name":"Fare",
+		"ftype":"categorical",
+	    "values":["0","1","2","3","4"]
+	},
+	{
+	    "name":"Cabin",
+		"ftype":"continuous",
+		"dtype":"INT"
+	},
+	{
+	    "name":"Lname",
+		"ftype":"continuous",
+		"dtype":"INT"
+	},
+	{
+	    "name":"NamePrefix",
+		"ftype":"continuous",
+		"dtype":"INT"
+	}
+    ],
+    "targets":[
+	{
+	    "name":"Survived",
+	    "ftype":"categorical",
+	    "values":[0,1]
+	}
+    ]
+}
