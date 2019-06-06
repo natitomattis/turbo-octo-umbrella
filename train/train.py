@@ -11,11 +11,10 @@ import pandas as pd
 import numpy as np
 import sklearn
 import scipy
-import json
 
 # import train and test to play with it
-df_train = pd.read_csv('../input/train.csv')
-df_test = pd.read_csv('../input/test.csv')
+df_train = pd.read_csv('input/train.csv')
+df_test = pd.read_csv('input/test.csv')
 
 
 
@@ -128,7 +127,7 @@ rfc.fit(X_train, y_train)
 # print rfc.predict([[ 3, 1, 1, 0, 1, 1, 6, 774, 16 ]])
 
 # Model persistence
-joblib.dump(rfc, '../model/sk.pkl')
+joblib.dump(rfc, 'model/sk.pkl')
 
 
 

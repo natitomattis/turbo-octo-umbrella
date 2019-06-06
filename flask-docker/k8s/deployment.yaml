@@ -16,7 +16,7 @@ spec:
         env: prod
     spec:
       containers:
-      - image: natitomattis/flask-first
+      - image: natitomattis/flask-ml-docker
         name: test-ml-titanic-api
         ports:
         - containerPort: 5000

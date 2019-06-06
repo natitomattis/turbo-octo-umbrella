@@ -78,7 +78,7 @@ Our machine learning algorithm can only read numerical values, so it is essentia
 
 A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
 
-## Model Persistence
+### Model Persistence
 
 After trainig the model, it is desirable to have a way to persist the model for future use without having to retrain. There are 2 libraries that make this possible:
 
