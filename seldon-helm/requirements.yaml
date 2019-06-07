@@ -1,0 +1,10 @@
+dependencies:
+- name: seldon-core-crd
+  repository: https://storage.googleapis.com/seldon-charts
+  version: 0.2.7
+- name: seldon-core
+  repository: https://storage.googleapis.com/seldon-charts
+  version: 0.2.7
+- name: seldon-single-model
+  repository: https://storage.googleapis.com/seldon-charts
+  version: 0.1
