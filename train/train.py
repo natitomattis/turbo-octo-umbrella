@@ -89,7 +89,13 @@ df_train = transform_features(df_train)
 df_test = transform_features(df_test)
 
 df_train, df_test = encode_features(df_train, df_test)
-
+print("Holas")
+print(df_train.info())
+print(df_train.max())
+print(df_train.min())
+#for col in df_train.columns:
+ #   print("MAX "+ df_train[col].ma)
+aaa
 #how to prevent overfitting & underfitting
 x_all = df_train.drop(['Survived', 'PassengerId'], axis=1)
 y_all = df_train['Survived']
