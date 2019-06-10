@@ -1,0 +1,9 @@
+model:
+    minReplicas: 1
+    maxReplicas: 5
+    maxCPU: 20
+    image:
+        name: natitomattis/seldon-ml-score-component:latest
+oauth:
+  key: 
+  secret:

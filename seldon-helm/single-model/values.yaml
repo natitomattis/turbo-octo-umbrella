@@ -1,0 +1,7 @@
+seldon-single-model:
+    name: test-seldon-ml-rocks
+    model:
+        image:
+            name: natitomattis/seldon-ml-score-component
+        name: titanic-classifier
+    replicas: 1

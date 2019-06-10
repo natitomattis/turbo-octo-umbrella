@@ -1,0 +1,58 @@
+{
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "kind": "SeldonDeployment",
+    "metadata": {
+        "name": "{{ .Release.Name }}"
+    },
+    "spec": {
+        "name": "{{ .Release.Name }}-deploy",
+{{- if .Values.oauth.key }}        
+        "oauth_key": "{{ .Values.oauth.key }}",
+        "oauth_secret": "{{ .Values.oauth.secret }}",
+{{- end }}
+        "predictors": [
+            {
+                "componentSpecs": [{
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "{{ .Values.model.image.name }}",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "classifier-hpa",
+                                "resources": {
+                                    "requests": {
+                                        "cpu": "0.5"
+                                    }
+                                }
+                            }
+                        ],
+                        "terminationGracePeriodSeconds": 1
+                    },
+            "hpaSpec":
+            {
+            "minReplicas": {{ int .Values.model.minReplicas }},
+            "maxReplicas": {{ int .Values.model.maxReplicas }},
+            "metrics":
+                [ {
+                "type": "Resource",
+                "resource": {
+                    "name": "cpu",
+                    "targetAverageUtilization": {{ int .Values.model.maxCPU }},
+                }
+                }]
+            }
+                }],
+                "graph": {
+                    "children": [],
+                    "name": "classifier-hpa",
+                    "endpoint": {
+                        "type" : "REST"
+                    },
+                    "type": "MODEL"
+                },
+                "name": "{{ .Release.Name }}",
+                "replicas": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,4 @@
+dependencies:
+- name: seldon-single-model
+  repository: https://storage.googleapis.com/seldon-charts
+  version: 0.1
