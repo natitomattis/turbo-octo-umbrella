@@ -20,7 +20,7 @@ kubectl config set-context $(kubectl config current-context) --namespace=seldon
 
 Install helm locally and tiller
 
-```bash 
+```bash
 sudo snap install helm --classic
 kubectl --namespace kube-system create serviceaccount tiller
 kubectl create clusterrolebinding tiller \
