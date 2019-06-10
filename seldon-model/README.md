@@ -1,4 +1,4 @@
-# Seldon deployment
+# Seldon Model Deployment
 
 The first step is wrap your model into seldon framework, this is done by following [this documentation](https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html). In this case, the file MLTitanic.py is the model.
 
