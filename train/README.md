@@ -1,5 +1,13 @@
 # A Comprehensive ML Workflow with Python
 
+## Problem Definition
+
+[Titanic: Machine Learning from Disaster] The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.  On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.
+
+One of the reasons that the shipwreck led to such loss of life was that there were not enough lifeboats for the passengers and crew. Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to survive than others, such as women, children, and the upper-class.
+
+In this challenge, we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy.
+
 ## Problem Feature
 
 This dataset contains information about 11 different variables:
@@ -35,28 +43,28 @@ This dataset contains information about 11 different variables:
 * **Ordinal**: An ordinal variable is similar to categorical values, but the difference between them is that we can have relative ordering or sorting between the values (PClass)
 * **Continous**: A feature is said to be continous if it can take values between any two points or between the minimum or maximum values in the features column. (Age)
 
-# Exploratory Data Analysis(EDA)
+## Exploratory Data Analysis(EDA)
 
-## Data Collection
+### Data Collection
 
 Data collection is the process of gathering and measuring data, information or any variables of interest in a standardized and established manner.
 
 * Each row is an observation (also known as : sample, example, instance, record)
 * Each column is a feature (also known as: Predictor, attribute, Independent Variable, input, regressor, Covariate)
 
-## Visualization
+### Visualization
 
 Data visualization is the presentation of data in a pictorial or graphical format. It enables decision makers to see analytics presented visually, so they can grasp difficult concepts or identify new patterns
 
-## Data Preprocessing
+### Data Preprocessing
 
 Data preprocessing refers to the transformations applied to our data before feeding it to the algorithm. Data Preprocessing is a technique that is used to convert the raw data into a clean data set.
 
 * How many columns and rows are there in my dataset ? (print(df_train.shape)) (891, 12)
 
-## Data Cleaning
+### Data Cleaning
 
-### Transforming Features
+#### Transforming Features
 
 Data transformation is the process of converting data from one format or structure into another format or structure
 
@@ -66,19 +74,21 @@ Data transformation is the process of converting data from one format or structu
 * **format_name**: Saves name and name prefix into two different variables (Lname, NamePrefix).
 * **drop_features**: Delete columns that will be unused.
 
-### Feature Encoding
+#### Feature Encoding
 
 Our machine learning algorithm can only read numerical values, so it is essential to encoding categorical features into numerical values. Features encoded ('Fare', 'Cabin', 'Age', 'Sex', 'Lname', 'NamePrefix')
 
 ## Model Deployment
 
-### how to prevent overfitting & underfitting???
-
 ### RandomForestClassifier
 
 A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
 
-### Model Persistence
+### Logistic Regression
+
+the logistic model is a widely used statistical model that, in its basic form, uses a logistic function to model a binary dependent variable; many more complex extensions exist. In regression analysis, logistic regression (or logit regression) is estimating the parameters of a logistic model
+
+## Model Persistence
 
 After trainig the model, it is desirable to have a way to persist the model for future use without having to retrain. There are 2 libraries that make this possible:
 

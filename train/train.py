@@ -34,8 +34,6 @@ def check_missing_data(df):
     else:
         return(False)
 
-# check_missing_data(df_train)
-
 def simplify_ages(df):
     df.Age = df.Age.fillna(-0.5)
     bins = (-1, 0, 5, 12, 18, 25, 35, 60, 120)
@@ -89,13 +87,7 @@ df_train = transform_features(df_train)
 df_test = transform_features(df_test)
 
 df_train, df_test = encode_features(df_train, df_test)
-print("Holas")
-print(df_train.info())
-print(df_train.max())
-print(df_train.min())
-#for col in df_train.columns:
- #   print("MAX "+ df_train[col].ma)
-aaa
+ 
 #how to prevent overfitting & underfitting
 x_all = df_train.drop(['Survived', 'PassengerId'], axis=1)
 y_all = df_train['Survived']
@@ -128,27 +120,5 @@ rfc = grid_obj.best_estimator_
 # Fit the best algorithm to the data. 
 rfc.fit(X_train, y_train)
 
-# print(X_train)
-# print(y_train)
-# print rfc.predict([[ 3, 1, 1, 0, 1, 1, 6, 774, 16 ]])
-
 # Model persistence
 joblib.dump(rfc, 'model/sk.pkl')
-
-
-
-# xgboost = xgb.XGBClassifier(max_depth=3, n_estimators=300, learning_rate=0.05).fit(X_train, y_train)
-
-
-
-# rfc_prediction = rfc.predict(X_test)
-# rfc_score=accuracy_score(y_test, rfc_prediction)
-# print(rfc_score)
-
-# xgboost = xgb.XGBClassifier(max_depth=3, n_estimators=300, learning_rate=0.05).fit(X_train, y_train)
-
-
-
-# xgb_prediction = xgboost.predict(X_test)
-# xgb_score=accuracy_score(y_test, xgb_prediction)
-# print(xgb_score)
