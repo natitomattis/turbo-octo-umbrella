@@ -1,4 +1,4 @@
-# Seldon Deployment
+# Seldon Deployment via Helm Charts
 
 ## Set Up the cluster
 
