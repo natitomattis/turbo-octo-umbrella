@@ -1,0 +1,18 @@
+separate_pods: true
+modela:
+  image:
+    name: "natitomattis/seldon-titanic-model-a:0.0.1"
+  endpoint: REST
+  name: classifier-a
+#  resources: { "requests": { "memory": "1Mi" }}
+modelb:
+  image:
+    name: "natitomattis/seldon-titanic-model-b:0.0.1"
+  endpoint: REST
+  name: classifier-b
+traffic_modela_percentage: 0.5
+replicas: 1
+# Add oauth key and secret if using the default API Oauth Gateway for ingress
+oauth:
+  key: 
+secret:
