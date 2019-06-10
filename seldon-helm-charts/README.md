@@ -88,7 +88,7 @@ kubectl get svc
 ```
 
 ```bash
-curl http://[AMBASSDOR_IP]/seldon/seldon/my-release/api/v0.1/predictions \
+curl http://[AMBASSADOR_IP]/seldon/seldon/my-release/api/v0.1/predictions \
     --request POST \
     --header "Content-Type: application/json" \
     --data '{"data": {"ndarray": [['3', '1', '4', '2', '0', '2', '0', '0', '1']]}}'
